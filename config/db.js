@@ -2,13 +2,14 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 
-const dbURI = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0-9zwxl.mongodb.net/pbx?retryWrites=true&w=majority`;
+const dbURI = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0-zdoxl.mongodb.net/test?retryWrites=true&w=majority`;
 
 const options = {
   poolSize: 10,
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
+  useCreateIndex: true,
 };
 
 mongoose.connect(dbURI, options).then(
